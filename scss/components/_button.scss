@@ -1,0 +1,77 @@
+.btnReservar {
+  background-color: #4fa932;
+  color: white;
+  border-radius: 5%;
+  padding: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #428d29 !important;
+  }
+}
+
+.reset {
+  background-color: #ff9900 !important;
+  color: white !important;
+  font-weight: bolder;
+  border-radius: 5%;
+  padding: 6px;
+  text-decoration: none;
+  margin-left: 10px;
+  &:hover {
+    background-color: #da8300 !important;
+  }
+}
+
+.reservas {
+  background-color: #4fa932 !important;
+  color: white !important;
+  font-weight: bolder;
+  border-radius: 5%;
+  padding: 6px;
+  text-decoration: none;
+  &:hover {
+    background-color: #428d29 !important;
+  }
+}
+
+.btn {
+  &Reducir {
+    background-color: rgb(160, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(103, 0, 0);
+    }
+  }
+  &Incrementar {
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #4fa932;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #428d29;
+    }
+  }
+}
+
+// a {
+//   text-decoration: none !important;
+//   color: white !important;
+// }
+
+.hora {
+  text-align: center;
+}

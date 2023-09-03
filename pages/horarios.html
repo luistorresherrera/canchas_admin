@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img class="logo" src="../images/logo canchas admin.png" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active reservas"
+                  aria-current="page"
+                  href="../index.html"
+                  >Reservas</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="full-page d-flex">
+        <div class="section-dias">
+          <div>
+            <h3>Configuración de empresa</h3>
+          </div>
+          <hr />
+          <div>Selecciona el horario laboral.</div>
+          <form action="">
+            <div class="d-flex align-items-center">
+              <div class="label">
+                <label for="inicioHorario">Hora de apertura:</label>
+              </div>
+              <div class="btnReducir" id="btnMenosApertura">
+                <a id="btnMenosApertura">-</a>
+              </div>
+              <div class="input">
+                <input
+                  type="text"
+                  min="0"
+                  max="24"
+                  id="inicioHorario"
+                  name="inicioHorario"
+                  value="0"
+                  class="hora"
+                  disabled="true"
+                />
+              </div>
+              <div class="btnIncrementar" id="btnMasApertura">
+                <a id="btnMasApertura">+</a>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="label">
+                <label for="finHorario">Hora de cierre:</label>
+              </div>
+              <div class="btnReducir" id="btnMenosCierre">
+                <a id="btnMenosCierre">-</a>
+              </div>
+              <div class="input">
+                <input
+                  type="text"
+                  min="0"
+                  max="24"
+                  id="finHorario"
+                  name="finHorario"
+                  value="24"
+                  class="hora"
+                  disabled="true"
+                />
+              </div>
+              <div class="btnIncrementar" id="btnMasCierre">
+                <a id="btnMasCierre">+</a>
+              </div>
+            </div>
+            <div class="btnGuardar">
+              <a class="guardar" href="" id="btnGuardarHorarioLaboral"
+                >Guardar</a
+              >
+            </div>
+          </form>
+
+          <hr />
+
+          <div>Selecciona los días que estará abierto el centro deportivo.</div>
+
+          <form action="" id="tablaDiasPrecios">
+            <table>
+              <thead>
+                <tr>
+                  <th class="size-20">Día</th>
+                  <th class="size-10">Activar</th>
+                  <th class="size-35">Precio de día</th>
+                  <th class="size-35">Precio de noche</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="sizeCol"><label for="Lunes">Lunes</label></td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Lunes"
+                        id="checkLunes"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaLunes"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheLunes"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sizeCol"><label for="Martes">Martes</label></td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Martes"
+                        id="checkMartes"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaMartes"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheMartes"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sizeCol">
+                    <label for="Miércoles">Miércoles</label>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Miércoles"
+                        id="checkMiércoles"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaMiércoles"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheMiércoles"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sizeCol"><label for="Jueves">Jueves</label></td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Jueves"
+                        id="checkJueves"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaJueves"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheJueves"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sizeCol"><label for="Viernes">Viernes</label></td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Viernes"
+                        id="checkViernes"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaViernes"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheViernes"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sizeCol"><label for="Sábado">Sábado</label></td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Sábado"
+                        id="checkSábado"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaSábado"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheSábado"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="sizeCol"><label for="Domingo">Domingo</label></td>
+                  <td class="sizeCol">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        name="Domingo"
+                        id="checkDomingo"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioDiaDomingo"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                  <td class="sizeCol">
+                    <div class="input-group">
+                      <span class="input-group-text">S/.</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="precioNocheDomingo"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="btnGuardar">
+              <a class="guardar" href="" id="btnGuardarDias">Guardar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script type="module" src="../scripts/horarios.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

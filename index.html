@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva de canchas</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img class="logo" src="./images/logo canchas admin.png" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active reservas"
+                  aria-current="page"
+                  href="./pages/horarios.html"
+                  >Configuración</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="full-page d-flex">
+        <div class="section-calendario">
+          <div class="d-flex align-items-center">
+            <h3>Calendario de reservas</h3>
+            <div class="align-middle">
+              <a
+                class="reset"
+                id="btnResetData"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                href="#"
+                >Reestablecer data</a
+              >
+            </div>
+          </div>
+          <div id="div-calendario"></div>
+        </div>
+
+        <div class="section-reservas">
+          <h3>Reservas</h3>
+          <div id="contenedor-cards"></div>
+         
+        </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <!-- MODALS CONFIRMACIÓN-->
+    <div class="modal" tabindex="-1" id="exampleModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmación</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Estás seguro que deseas reestablecer toda la data?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              id="reestablecer"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Sí, reestablecer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS DE RESERVA-->
+
+    <div class="modal" tabindex="-2" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Reservar cancha</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="cuerpoModalReserva">
+            <p>Completa tus datos para realizar la reserva:</p>
+            <table class="tablaReserva">
+              <tr>
+                <td>Nombres:</td>
+                <td><input type="text" id="nombresReserva" /></td>
+              </tr>
+              <tr>
+                <td>Apellido paterno:</td>
+                <td><input type="text" id="apPaternoReserva" /></td>
+              </tr>
+              <tr>
+                <td>Apellido materno:</td>
+                <td><input type="text" id="apMaternoReserva" /></td>
+              </tr>
+              <tr>
+                <td>DNI:</td>
+                <td><input type="number" id="dniReserva" /></td>
+              </tr>
+              <tr>
+                <td>Día:</td>
+                <td id="diaReserva"></td>
+              </tr>
+              <tr>
+                <td>Horario:</td>
+                <td id="horarioReserva"></td>
+              </tr>
+              <tr>
+                <td>Precio (S/.):</td>
+                <td id="precioReserva"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar reserva
+            </button>
+            <button
+              type="button"
+              id="ConfirmarReserva"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Confirmar reserva
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/main.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
